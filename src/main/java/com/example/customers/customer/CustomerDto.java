@@ -11,5 +11,6 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 public class CustomerDto {
     @NotEmpty
+    @UniqueCustomerName
     String name;
 }

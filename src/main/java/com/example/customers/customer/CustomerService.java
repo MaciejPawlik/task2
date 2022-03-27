@@ -1,7 +1,6 @@
 package com.example.customers.customer;
 
-import com.example.customers.address.Address;
-
+import java.util.Optional;
 import java.util.Set;
 
 public interface CustomerService {
@@ -10,4 +9,6 @@ public interface CustomerService {
     Set<Customer> getAllCustomers();
 
     Customer getCustomerById(long customerId);
+
+    Optional<Customer> getCustomerByName(String customerName);
 }
