@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AddressServiceImpl implements AddressService {
+class AddressServiceImpl implements AddressService {
     private final AddressRepository repository;
     private final CustomerService customerService;
 
