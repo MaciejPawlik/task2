@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "customers")
@@ -19,6 +20,7 @@ public class Customer {
     private Long id;
 
     @NotEmpty
+    @Size(max = 255)
     private String name;
 
     @OneToOne(mappedBy = "customer", fetch = FetchType.LAZY)

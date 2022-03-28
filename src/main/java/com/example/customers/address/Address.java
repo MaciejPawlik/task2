@@ -4,6 +4,7 @@ import com.example.customers.customer.Customer;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -20,17 +21,20 @@ public class Address {
     @Getter
     @Setter
     @NotEmpty
+    @Size(max = 255)
     private String street;
 
     @Getter
     @Setter
     @NotEmpty
+    @Size(max = 255)
     private String city;
 
     @Getter
     @Setter
     @NotEmpty
     @Column(name = "postal_code")
+    @Size(max = 16)
     private String postalCode;
 
     @OneToOne(fetch = FetchType.LAZY)

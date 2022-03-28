@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
@@ -12,5 +13,6 @@ import javax.validation.constraints.NotEmpty;
 public class CustomerDto {
     @NotEmpty
     @UniqueCustomerName
+    @Size(max = 255)
     String name;
 }
