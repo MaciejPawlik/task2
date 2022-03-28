@@ -3,5 +3,5 @@
 ```shell
 ./gradlew bootRun
 ```
-3. Swagger: http://localhost:8080/swagger-ui.html (authentication already set, no need to provide credentials)
+3. Swagger: http://localhost:8080/swagger-ui.html
 4. Basic auth implemented - login: admin, pass: admin
