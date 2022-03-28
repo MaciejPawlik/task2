@@ -4,9 +4,11 @@ import com.example.customers.address.Address;
 import com.example.customers.address.AddressDto;
 import com.example.customers.address.AddressService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -20,6 +22,7 @@ public class CustomerController {
     private final AddressService addressService;
     private final ObjectMapper mapper;
 
+    @ApiOperation("Add new customer")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CustomerAddressDto addCustomer(@Valid @RequestBody CustomerDto request) {
@@ -27,12 +30,14 @@ public class CustomerController {
         return mapper.convertValue(customerService.addCustomer(toAdd), CustomerAddressDto.class);
     }
 
+    @ApiOperation("Get all customers")
     @GetMapping
     public Set<CustomerAddressDto> getAllCustomers() {
         return mapper.convertValue(customerService.getAllCustomers(),
                 mapper.getTypeFactory().constructCollectionType(Set.class, CustomerAddressDto.class));
     }
 
+    @ApiOperation("Add/update customer's address")
     @PutMapping("{customerId}/address")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void addCustomerAddress(@PathVariable long customerId, @Valid @RequestBody AddressDto request) {
