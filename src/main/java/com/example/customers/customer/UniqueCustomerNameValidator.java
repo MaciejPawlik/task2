@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 @RequiredArgsConstructor
-public class UniqueCustomerNameValidator implements ConstraintValidator<UniqueCustomerName, String> {
+class UniqueCustomerNameValidator implements ConstraintValidator<UniqueCustomerName, String> {
 
     private final CustomerService service;
 
