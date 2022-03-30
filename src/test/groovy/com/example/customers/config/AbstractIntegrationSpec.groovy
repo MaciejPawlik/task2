@@ -21,8 +21,8 @@ abstract class AbstractIntegrationSpec extends Specification {
     static void overrideProps(DynamicPropertyRegistry registry) {
         container.start()
         registry.add('spring.datasource.url', () -> container::getJdbcUrl())
-        registry.add('spring.datasource.username', () -> container::getPassword())
-        registry.add('spring.datasource.password', () -> container::getUsername())
+        registry.add('spring.datasource.username', () -> container::getUsername())
+        registry.add('spring.datasource.password', () -> container::getPassword())
     }
 
     def cleanupSpec() {
