@@ -27,7 +27,11 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.spockframework:spock-core:2.1-groovy-3.0'
+    testImplementation 'org.spockframework:spock-spring:2.1-M1-groovy-3.0'
     testImplementation 'org.codehaus.groovy:groovy-all:3.0.10'
+    testImplementation 'org.testcontainers:spock:1.16.3'
+    testImplementation 'org.testcontainers:postgresql:1.16.3'
+    testImplementation 'org.postgresql:postgresql:42.3.2'
 }
 
 tasks.named('test') {
