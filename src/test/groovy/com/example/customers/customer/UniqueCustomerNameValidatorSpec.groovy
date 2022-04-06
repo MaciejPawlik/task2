@@ -14,8 +14,8 @@ class UniqueCustomerNameValidatorSpec extends Specification {
     @Unroll
     def 'should return confirmation if customer\'s name is unique when name #description'() {
         given:
-        customerService.getCustomerByName('existing') >> Optional.of(new Customer())
-        customerService.getCustomerByName('notExisting') >> Optional.empty()
+        customerService.existsCustomerByName('existing') >> true
+        customerService.existsCustomerByName('notExisting') >> false
 
         when:
         def result = tested.isValid(customerName, Mock(ConstraintValidatorContext))

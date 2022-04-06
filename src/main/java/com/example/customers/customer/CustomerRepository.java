@@ -13,4 +13,6 @@ interface CustomerRepository extends CrudRepository<Customer, Long> {
     Set<Customer> findAll();
 
     Optional<Customer> findByNameIgnoreCase(String name);
+
+    boolean existsByNameIgnoreCase(String name);
 }

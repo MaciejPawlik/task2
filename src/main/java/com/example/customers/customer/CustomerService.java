@@ -10,5 +10,5 @@ public interface CustomerService {
 
     Customer getCustomerById(long customerId);
 
-    Optional<Customer> getCustomerByName(String customerName);
+    boolean existsCustomerByName(String customerName);
 }

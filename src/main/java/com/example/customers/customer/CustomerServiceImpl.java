@@ -30,7 +30,7 @@ class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Optional<Customer> getCustomerByName(String customerName) {
-        return repository.findByNameIgnoreCase(customerName);
+    public boolean existsCustomerByName(String customerName) {
+        return repository.existsByNameIgnoreCase(customerName);
     }
 }

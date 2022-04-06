@@ -12,6 +12,6 @@ class UniqueCustomerNameValidator implements ConstraintValidator<UniqueCustomerN
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return service.getCustomerByName(value.trim()).isEmpty();
+        return !service.existsCustomerByName(value);
     }
 }
