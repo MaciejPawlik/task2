@@ -1,12 +1,10 @@
 package com.example.customers.config
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import org.springframework.beans.factory.annotation.Autowired
+
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.context.TestPropertySource
-import org.springframework.test.web.servlet.MockMvc
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.spock.Testcontainers
 import spock.lang.Shared
@@ -31,10 +29,4 @@ abstract class AbstractIntegrationSpec extends Specification {
     def cleanupSpec() {
         container.stop()
     }
-
-    @Autowired
-    MockMvc mockMvc
-
-    @Autowired
-    ObjectMapper objectMapper
 }
