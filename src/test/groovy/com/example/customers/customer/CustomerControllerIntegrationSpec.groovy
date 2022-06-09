@@ -1,13 +1,13 @@
 package com.example.customers.customer
 
 import com.example.customers.address.AddressDto
-import com.example.customers.test.AbstractIntegrationSpec
+import com.example.customers.config.AbstractControllerIntegrationSpec
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
 
-class CustomerControllerIntegrationSpec extends AbstractIntegrationSpec {
+class CustomerControllerIntegrationSpec extends AbstractControllerIntegrationSpec {
 
     def 'should add new customer'() {
         given:
